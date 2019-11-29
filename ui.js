@@ -29,10 +29,10 @@ class UI {
                     <button class="btn btn-outline-secondary w-100 mt-3" onclick="showFollowers()">
                         Takipçi  <span class="badge badge-light">${user.followers}</span>
                     </button>
-                    <button class="btn btn-outline-info w-100 mt-1">
+                    <button class="btn btn-outline-info w-100 mt-1" onclick="showFollowing()">
                         Takip Edilen  <span class="badge badge-light">${user.following}</span>
                     </button>
-                    <button class="btn btn-outline-danger w-100 mt-1">
+                    <button class="btn btn-outline-danger w-100 mt-1" onclick="showRepos()">
                         Repolar  <span class="badge badge-light">${user.public_repos}</span>
                     </button>
                     <hr>
@@ -58,7 +58,7 @@ class UI {
         `;
     }
     showRepoInfo(repos) {
-        this.repoDiv.innerHTML=`<h3 class="page-heading mb-3">En son repolar</h3>`;
+        this.repoDiv.innerHTML=`<div class="col-md-12"><h3 class="page-heading mb-3">En Son Repolar</h3></div>`;
         repos.forEach(repo => {
             this.repoDiv.innerHTML += `
             <div class="col-md-12 mb-2 card-body">
