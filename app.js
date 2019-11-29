@@ -7,6 +7,7 @@ const main = document.getElementById("repos");
 const github=new Github();
 const ui=new UI();
 const followers=[];
+const followering=[];
 
 eventListeners();
 
@@ -58,14 +59,29 @@ function getAllSearched() {
 }
 
 function showFollowers() {
-    main.innerHTML=`<h3 class="page-heading mb-3">Followers</h3>`;
+    main.innerHTML=`<div class="col-md-12"><h3 class="page-heading mb-3">Followers</h3></div>`;
     followers.push.forEach(profil => {
         main.innerHTML += `
-            <div class="col-md-4 mb-2 card-body">
+            <div class="col-md-3 mb-2 card-body">
                 <a href="${profil.html_url}" target = "_blank">
                     <img class="img-fluid mb-2 rounded-circle" src="${profil.avatar_url}"> 
                 </a>
-                <div id="fullName"><strong> ${profil.login}</strong></div>
+                <p>${profil.login}</p>
+            </div>
+        `;
+    });
+    
+}
+
+function showFollowering() {
+    main.innerHTML=`<div class="col-md-12"><h3 class="page-heading mb-3">Followers</h3></div>`;
+    followering.push.forEach(profil => {
+        main.innerHTML += `
+            <div class="col-md-3 mb-2 card-body">
+                <a href="${profil.html_url}" target = "_blank">
+                    <img class="img-fluid mb-2 rounded-circle" src="${profil.avatar_url}"> 
+                </a>
+                <p>${profil.login}</p>
             </div>
         `;
     });

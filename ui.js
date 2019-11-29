@@ -58,6 +58,7 @@ class UI {
         `;
     }
     showRepoInfo(repos) {
+        this.repoDiv.innerHTML=`<h3 class="page-heading mb-3">En son repolar</h3>`;
         repos.forEach(repo => {
             this.repoDiv.innerHTML += `
             <div class="col-md-12 mb-2 card-body">
