@@ -1,3 +1,4 @@
+dayjs.extend(dayjs_plugin_relativeTime);
 const githubForm = document.getElementById("github-form");
 const nameInput = document.getElementById("githubname");
 const clearLastUsers = document.getElementById("clear-last-users");
@@ -135,11 +136,15 @@ function showTimeline() {
                                 <div class="col-md-3">
                                     <img src="${time.actor.avatar_url}" alt="..." class="img-fluid rounded-circle wh-10">
                                 </div>
-                                <div class="col-md-9 mt-3">
+                                <div class="col-md-7 mt-3">
                                     <p>${time.actor.login}</p>
                                     <span class="badge badge-pill badge-danger">${time.payload.action}</span>
                                     <a href="${time.repo.url}" class="badge badge-light">${time.repo.name}</a>
                                 </div>
+                                <div class="col-md-2 mt-4">
+                                    <span class="align-middle time"> ${dayjs(time.created_at).fromNow()}</span>
+                                </div>
+                            </div>
                             </div>
                                 
                             </div>   
