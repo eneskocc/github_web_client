@@ -52,7 +52,7 @@ class UI {
                         
                     </div>
                     
-                    
+                    <button class="btn btn-outline-warning w-100 mt-3" onclick="showTimeline()">TimeLine</button>
                 </div>
             </div>
         `;

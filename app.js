@@ -8,6 +8,7 @@ const github = new Github();
 const ui = new UI();
 const followers = [];
 const following = [];
+const timeline = [];
 const repos = [];
 eventListeners();
 
@@ -36,6 +37,7 @@ function getData(e) {
                     ui.showRepoInfo(response.repo);
                     followers.push = response.followers;
                     following.push = response.following;
+                    timeline.push = response.timeLine;
                     repos.push = response.repo;
 
                 }
@@ -118,5 +120,35 @@ function showRepos() {
             </div> 
             `;
     });
+
+
+}
+
+function showTimeline() {
+    main.innerHTML = `<div class="col-md-12"><h3 class="page-heading mb-3">Timeline</h3></div>`;
+    timeline.push.forEach(time => {
+        main.innerHTML += `
+            <div class="col-md-12 card-body">
+                    <div class="row p-3 border border-dark rounded">
+                        <div class="col-md-12"> 
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="${time.actor.avatar_url}" alt="..." class="img-fluid rounded-circle wh-10">
+                                </div>
+                                <div class="col-md-9 mt-3">
+                                    <p>${time.actor.login}</p>
+                                    <span class="badge badge-pill badge-danger">${time.payload.action}</span>
+                                    <a href="${time.repo.url}" class="badge badge-light">${time.repo.name}</a>
+                                </div>
+                            </div>
+                                
+                            </div>   
+                        </div>
+                </div>
+
+            </div> 
+            `;
+    });
+
 
 }
