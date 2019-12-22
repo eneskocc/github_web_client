@@ -12,7 +12,12 @@ class UI {
         this.inputField.value = "";
     }
 
-    showUserInfo(user) {
+    showUserInfo(user,repos) {
+        let starTotal=0;
+        repos.forEach(repo => {
+            starTotal+=Number(repo.stargazers_count);
+                                    
+        });
         this.profileDiv.innerHTML = `
            
             <div class="card card-body mb-3">
@@ -34,6 +39,9 @@ class UI {
                     </button>
                     <button class="btn btn-outline-danger w-100 mt-1" onclick="showRepos()">
                         Repolar  <span class="badge badge-light">${user.public_repos}</span>
+                    </button>
+                    <button class="btn btn-outline-dark w-100 mt-1" onclick="showRepos()">
+                        Toplam Starlanma  <span class="badge badge-dark">${starTotal}</span>
                     </button>
                     <hr>
                     <li class="list-group">

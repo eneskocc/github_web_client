@@ -34,7 +34,7 @@ function getData(e) {
                 } else {
                     ui.addSearchedUsersFromUI(username);
                     Storage.addSearchedUsersFromStorage(username);
-                    ui.showUserInfo(response.user);
+                    ui.showUserInfo(response.user,response.repo);
                     ui.showRepoInfo(response.repo);
                     followers.push = response.followers;
                     following.push = response.following;
