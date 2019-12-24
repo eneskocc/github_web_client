@@ -43,6 +43,9 @@ class UI {
                     <button class="btn btn-outline-dark w-100 mt-1" onclick="showRepos()">
                         Toplam Starlanma  <span class="badge badge-dark">${starTotal}</span>
                     </button>
+                    <button class="btn btn-outline-secondary w-100 mt-3" onclick="showUnrequited()">
+                        Takipçi  <span class="badge badge-light">${user.followers}</span>
+                    </button>
                     <hr>
                     <li class="list-group">
                         <li class="list-group-item borderzero">

@@ -93,6 +93,38 @@ function showFollowing() {
 
 }
 
+function showUnrequited() {
+    const a=[];
+    a.push(following.push);
+    main.innerHTML = `<div class="col-md-12"><h3 class="page-heading mb-3">Unrequited</h3></div>`;
+    const b=a[0];
+    const c=followers.push;
+    for (let index = 0; index < b.length; index++) {
+        const element1 = b[index];
+        
+        for (let index1 = 0; index1 < c.length; index1++) {
+            const element2 = c[index1];
+            console.log(element1.login);
+            if(element1.login===element2.login){
+                
+                b.splice(index, 1);
+            }
+        }
+    }
+    
+    b.forEach(profil => {
+        main.innerHTML += `
+            <div class="col-md-3 mb-2 card-body">
+                <a href="${profil.html_url}" target = "_blank">
+                    <img class="img-fluid mb-2 rounded-circle" src="${profil.avatar_url}"> 
+                </a>
+                <p>${profil.login}</p>
+            </div>
+        `;
+    });
+
+}
+
 function showRepos() {
     main.innerHTML = `<div class="col-md-12"><h3 class="page-heading mb-3">En Son Repolar</h3></div>`;
     repos.push.forEach(repo => {
