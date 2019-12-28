@@ -15,9 +15,6 @@ eventListeners();
 
 function eventListeners() {
     githubForm.addEventListener("submit", getData);
-    clearLastUsers.addEventListener("click", clearAllSearched);
-
-    document.addEventListener("DOMContentLoaded", getAllSearched);
 }
 
 function getData(e) {
@@ -47,20 +44,6 @@ function getData(e) {
     }
     ui.clearInput();
     e.preventDefault();
-}
-
-function clearAllSearched() {
-    if (confirm("Emin misiniz?")) {
-        Storage.clearSearchedUsersFromStorage();
-        ui.clearSearchedUsersFromUI();
-    }
-}
-
-function getAllSearched() {
-    let users = Storage.getSearchedUsersFromStorage();
-    users.forEach(user => {
-        lastUsers.innerHTML += `<li class="list-group-item">${user}</li>`;
-    });
 }
 
 function showFollowers() {
