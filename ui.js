@@ -5,7 +5,7 @@ class UI {
         this.lastUsers = document.getElementById("last-users");
         this.inputField = document.getElementById("githubname");
         this.navbar = document.getElementById("navbar");
-        this.cardBody = document.querySelector(".card-body");
+        
     }
 
     clearInput() {
@@ -103,7 +103,7 @@ class UI {
         const div = document.createElement("div");
         div.className = "alert alert-danger";
         div.textContent = massage;
-        this.cardBody.appendChild(div);
+        this.repoDiv.appendChild(div);
         setTimeout(() => {
             div.remove();
         }, 2000);
